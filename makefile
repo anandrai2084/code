@@ -1,6 +1,10 @@
-make README.md:
+all: README.md
+
+README.md: guessinggame.sh
        touch README.md
-       echo " ## The Unix Workbench Course Assignment" > README.md;
-       date >> README.md;
-       n=`wc -l guessinggame.sh`;
-       echo "Number of lines in guessinggame.sh :$n" >> README.md;
+       echo " ## The Unix Workbench Course Assignment" > README.md
+       date >> README.md
+       echo "Number of lines in script:" >> README.md
+       wc -l guessinggame.sh >> README.md
+clean:
+       rm README.md
